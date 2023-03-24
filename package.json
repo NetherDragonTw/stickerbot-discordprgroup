@@ -1,10 +1,14 @@
 {
   "type": "module",
   "scripts": {
-    "login":"node src/main.js"
+    "loginbot": "vite-node src/main.js"
   },
   "dependencies": {
     "discord.js": "^14.8.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "fast-glob": "^3.2.12",
+    "pinia": "^2.0.33",
+    "vite-node": "^0.29.7",
+    "vue": "^3.2.47"
   }
 }
