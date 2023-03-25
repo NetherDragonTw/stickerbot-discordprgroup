@@ -1,18 +1,19 @@
-
 import { Client, Events, GatewayIntentBits } from 'discord.js'
-import vueinit from '@/core/vue'
+import vueInit from '@/core/vue'
 import dotenv from 'dotenv'
-import { loadCommands } from '@/core/loader'
+import { useAppStore } from '@/store/app'
 
-vueinit()
+import { loadCommands, loadEvents } from '@/core/loader'
+
+vueInit()
 dotenv.config()
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+loadCommands()
 
+const client = new Client({ intents: [GatewayIntentBits.Guilds] })
+const appStore = useAppStore()
+appStore.client = client
 
-client.once(Events.ClientReady, c => {
-	console.log(`已從機器人帳戶${c.user.tag}登入`);
-});
+loadEvents()
 
-
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)

@@ -1,8 +1,8 @@
-import {SlashCommandBuilder} from 'discord.js'
+import { SlashCommandBuilder } from 'discord.js'
 
 export const command = new SlashCommandBuilder()
-.setName('貼圖 列表')
-.setDescription('列出目前可使用的貼圖ID')
+.setName('sticker_list')
+.setDescription('顯示可用的貼圖列表')
 
 
 export const action = async(context) => {

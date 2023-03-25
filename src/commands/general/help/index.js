@@ -1,8 +1,8 @@
-import {SlashCommandBuilder} from 'discord.js'
+import { SlashCommandBuilder } from 'discord.js'
 
 export const command = new SlashCommandBuilder()
-.setName('貼圖 幫助')
-.setDescription('顯示幫助訊息')
+.setName('sticker_help')
+.setDescription('顯示幫助內容')
 
 
 export const action = async(context) => {

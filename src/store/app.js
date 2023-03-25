@@ -1,10 +1,11 @@
-import { definestore } from 'pinia'
+import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
     state: () => ({
+        client: null,
         commandsActionMap: null,
-    })
-    getters: {}
-    actions: {}
+    }),
+    getters: {},
+    actions: {},
   })
   
