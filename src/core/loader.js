@@ -23,7 +23,7 @@ export const loadCommands = async () => {
 
   for (const file of files) {
     const cmd = await import(file)
-    commands.push(cmd.command)
+    commands.push(cmd.command.toJSON())
     actions.set(cmd.command.name, cmd.action)
   }
 
