@@ -6,5 +6,5 @@ export const command = new SlashCommandBuilder()
 
 
 export const action = async (context) => {
-    await context.reply('目前可用貼圖列表:\n沒有可用列表')
+    await context.reply(process.env.stickerlist)
 }
