@@ -2,7 +2,7 @@ import { Events } from "discord.js"
 import { useAppStore } from '@/store/app'
 
 export const event = {
-    name: Events.InteractionCreate
+    name: Events.InteractionCreate,
 }
 
 export const action = async (interaction) => {
@@ -10,5 +10,5 @@ export const action = async (interaction) => {
     const appStore = useAppStore()
     const action = appStore.commandsActionMap.get(interaction.commandName)
 
-    await action()
+    await action(interaction)
 }

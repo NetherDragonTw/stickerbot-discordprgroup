@@ -5,6 +5,6 @@ export const command = new SlashCommandBuilder()
 .setDescription('顯示可用的貼圖列表')
 
 
-export const action = async(context) => {
+export const action = async (context) => {
     await context.reply('目前可用貼圖列表:\n沒有可用列表')
 }
