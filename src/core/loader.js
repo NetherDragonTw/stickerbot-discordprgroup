@@ -6,7 +6,7 @@ const updateSlashCommands = async (commands) => {
   const rest = new REST({ version: 10 }).setToken(process.env.TOKEN)
   await rest.put(
     Routes.applicationCommands(
-      process.env.APPLICATION_ID,
+      process.env.APPLICATION_ID
     ),
     {
       body: commands,
@@ -22,7 +22,7 @@ export const loadCommands = async () => {
 
   for (const file of files) {
     const cmd = await import(file)
-    commands.push(cmd.command.toJSON())
+    commands.push(cmd.command)
     actions.set(cmd.command.name, cmd.action)
   }
 
